@@ -1,0 +1,175 @@
+.animacion-h3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.table-pol{
+    min-width: 60px; 
+}
+
+.input-pol{
+    width: 60px; 
+    font-family: "Quicksand";
+}
+
+.table-pol{
+    font-size: .85em;
+    border: 1.5px solid #001B48;
+    color: #666;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#name-pol{
+    background-color: #001B48;
+    color: #FFFF;
+}
+
+.table-pol td, .table-pol th{
+    padding: .8em;
+    border-bottom: 2px solid #018ABE; 
+}
+
+.table-container {
+    border-left: 5%;
+    width: 75%;
+    overflow-x: auto; 
+}
+
+.animation-pol{
+    border-collapse: collapse;
+    border:black 3px solid;
+}
+
+.animation-pol tr td{ 
+    margin: 10px;
+    padding: 3px;
+    border: black solid 2px;
+}
+
+.animacion{
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.polinomios{
+    width: 100%;
+}
+
+.animacion-control--botones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.animacion-control--botones .button--enabled{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    border: 1px #02457A solid;
+    width: 20%;
+    margin: 0.5rem;
+    color: #02457A;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.animacion-control--botones .button--enabled:hover,
+.animacion-control--botones .button--enabled:active {
+    border: 1px whitesmoke solid;
+    color: whitesmoke;
+    background-color: #02457A;
+}
+
+.animacion-control--botones .button--disabled{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color:#ff2b2b;
+    border: 1px #ff2b2b solid;
+    width: 20%;
+    margin: 0.5rem;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.animacion-control{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.telefono-mensaje{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    margin-top: 4.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+  
+.telefono-mensaje .mensaje{
+    width: 100%;
+}
+  
+.telefono-mensaje .imagen{
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.telefono-mensaje .imagen img{
+    display: block;
+    width: 80%;
+}
+
+@media (min-width: 30rem) {
+    .telefono-mensaje {
+      display: none;
+    }
+
+    .animacion {
+        display: flex;
+      }
+}
+
+.animation-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#anima-pol1 tr, #anima-pol1 th{
+    text-align: center;
+}
+
+#anima-pol2 tr, #anima-pol2 th{
+    text-align: center;
+}
+
+#anima-polres tr, #anima-polres th{
+    text-align: center;
+}
+
+#result{
+    color: #02457A;
+}

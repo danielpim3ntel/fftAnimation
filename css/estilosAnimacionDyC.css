@@ -1,0 +1,204 @@
+.animacion{
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.animacion-control{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.animacion-h3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.polinomios{
+    width: 100%;
+}
+
+.animacionDyC{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.animacion-control--botones select{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    border: 1px whitesmoke solid;
+    margin: 0.5rem;
+    color: #001B48;
+    font-weight: 500;
+    -webkit-appearance: none;
+}
+
+.animacion-control--botones select:hover{
+    border: 1px #001B48 solid;
+}
+
+.animacionCon-panel{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5% 0 -0.5%;
+}
+
+.animacionCon{
+    width: 75%;
+    height: 75vh;
+    margin-right: 0.5%;
+}
+
+.panel{
+    width: 24%;
+    padding-left: 3;
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 0.5%;
+}
+
+.panel p{
+    font-size: 1.2vw;
+    padding: 0px; 
+    margin: 0px;
+}
+
+.panel h4{
+    font-size: 1.3vw;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background-color: #02457A;
+    color: whitesmoke;
+    padding: 0;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.funciones{
+    display: none;
+    border: 2px solid #02457A;
+    text-align: left; 
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+.main{
+    display: none;
+    border: 2px solid #02457A;
+    padding-left: 2%;
+    text-align: left; 
+    border-radius: 10px;
+}
+
+.pseudocodigo{
+    text-align: left; 
+    display: none;
+    padding: 5px;
+}
+
+.pseudocodigo-main{
+    padding: 5px;
+    text-align: left; 
+    display: block;
+}
+
+#cy {
+    height: 100%;
+    width: 100%;
+}
+
+#contenedor{
+    display: flex;
+}
+
+.animacionDyC-informacion{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.animacionDyC-informacion--info{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.animacionDyC-informacion--control{
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.animacionDyC-informacion--control .continuar{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color:whitesmoke;
+    border: 1px #02457A solid;
+    width: 25%;
+    margin: 0.5rem;
+    color: #02457A;
+    font-weight: 500;    
+    cursor: pointer;
+}
+
+.animacionDyC-informacion--control .continuar-disabled{
+    background-color:#ff2b2b;
+    border: 1px #ff2b2b solid;
+    color: whitesmoke;
+
+    padding: 0.25rem;
+    border-radius: 1rem;
+    width: 25%;
+    margin: 0.5rem;
+    font-weight: 500;    
+    cursor: pointer;
+}
+
+.animacionDyC-informacion--control .continuar:hover,
+.animacionDyC-informacion--control .continuar:active{
+    background-color:#02457A;
+    color: whitesmoke;
+}
+
+.animacionDyC-informacion--control .detener{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color:whitesmoke;
+    border: 1px #ff2b2b solid;
+    width: 45%;
+    margin: 0.5rem;
+    color: #ff2b2b;
+    font-weight: 500;    
+    cursor: pointer;
+}
+
+.animacionDyC-informacion--control .detener:hover,
+.animacionDyC-informacion--control .detener:active{
+    background-color:#ff2b2b;
+    color: whitesmoke;
+}

@@ -1,0 +1,90 @@
+/*
+Paleta de colores :P
+Stratos: #001B48: 
+->Regal blue: #02457A 
+Bondi blue: #018ABE 
+Morning glory: #97CAD8 
+Botticelli: #D6E8EE
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+}
+
+main {
+  min-height: calc(100vh - 3.5rem - 8rem);
+  margin-top: 3.5em;
+}
+
+.information{
+	width: 90vw;
+  margin: 5vw;
+  margin: 10vh 5vw 5vw 5vw;
+}
+
+.information__h1{
+  margin: 1%;
+  font-size: 2rem;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+  animation-name: iniciar;
+}
+
+@keyframes iniciar {
+  from {
+  	color: #000;
+    padding-left: 50%;
+  }
+
+  to {
+  	color: #02457A;
+    padding-left: 0%;
+  }
+}
+
+.information__text--matExp{
+	text-align: center;
+	font-size: 1.3rem;
+	font-style:italic;
+}
+
+.information__text--p{
+	text-align: justify;
+}
+
+.information__text{
+  border: #D6E8EE 5px double;
+  padding: 1.5vw;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: bordeInfo;
+}
+
+@keyframes bordeInfo {
+  from {
+    border-color: #D6E8EE;
+  }
+
+  50% {
+    border-color: #001B48;
+  }
+
+  100% {
+    border-color: #97CAD8;
+  }
+}
+
+.code{
+  border: #9c9c9c 4px solid;
+  color: #fff;
+  background-color: #001B48;
+  overflow: auto;
+  font-size: 1rem;
+  width: 100%;
+}

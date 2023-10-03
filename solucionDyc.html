@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de polinomios</title>
+    <link rel="shortcut icon" href="img/burbuja.png">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" type="text/css" href="css/estiloSolucionDyV.css">
+    <link rel="stylesheet" href="css/infoShared.css">
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <div class="modal">
+        <h1 class="modal__title">Mensaje</h1>
+        <div class="modal__actions">
+            <a href="start-hosting/index.html" class="modal__action">Aceptar</a>
+            <button class="modal__action modal__action--negative" type="button">Declinar</button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div>
+            <button class="toggle-button">
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+            </button>
+            <a href="index.html" class="main-header__brand">
+                <img src="img/burbuja.png" alt="">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="index.html">Descripción</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="animacionDirecta.html">Animación</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="index.html">Problema</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDirecta.html">Solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDyC.html">Solución DyC</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDirecta.html">Animación solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDyC.html">Animación DyC</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="options">
+            <ul class="options__items">
+                <li class="options__item">
+                    <a href="index.html">Problema</a>
+                </li>
+                <li class="options__item">
+                    <a href="solucionDirecta.html">Solución directa</a>
+                </li>
+                <li class="options__item options__item--active">
+                    <a href="solucionDyC.html">Solución Divide y Vencerás</a>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="information">
+
+            <h1 class="information__h1">Solución Divide y vencerás</h1>
+
+            <article class="information__text algorithm">
+
+                <h2>El mundo de los algoritmos</h2>
+                <p class="information__text--p">
+                    La vida está llena de algoritmos, los encontramos todos los días en el trabajo, la escuela, la
+                    televisión. "Algoritmos" es una palabra que se ha adueñado de miles de campos laborales, gracias a
+                    su gran utilidad en diversas ramas. Hay problemas que cuenta con más de un algoritmo para ser
+                    resultos, sin embargo, existen caminos mejores que otros a nivel computacional.
+                    <br><br>
+                    En esta ocasión se hablará sobre la multiplicación de polinomios, cuya solución directa resulta
+                    tener una complejidad O(n<sup>2</sup>), sin embargo, existe un camino que mejora esta complejidad y
+                    el algoritmos resulta bastante curioso.
+                </p>
+
+            </article>
+
+            <article class="information__text coefVal">
+
+                <h2>De coeficientes a valores</h2>
+                <p class="information__text--p">
+                    Es posible represntar 2 polinomios A(x) y B(x) solamente con sus coefientes, ya que estos son únicos
+                    para cada uno, esta es una forma de abstraer al polinomio, ahora si se traza la gráfica de 2
+                    polinimios (A(x) y B(x)) y se toman puntos de ambas gráficas con el valor de x igual para ambos
+                    polinomios, tendremos pares de la forma (x,y), con estos es posible llegar al polinomio resultante
+                    del producto de A(x) y B(x).
+                </p>
+
+                <div class="information__div--Imag" id="imgPolif">
+                </div>
+
+                <p class="information__text--p">
+                    El primer paso para obtener el resultado es hacer la multiplicación de los pares (x,y), en el
+                    resultado permanece el valor de x, que es igual para ambos polinomios, el la muliplicación de pares
+                    tendrá la forma (x<sub>i</sub>,y<sub>ai</sub>*y<sub>bi</sub>), donde y<sub>ai</sub> es el resultado
+                    de evaluar el polinomio A en el punto x<sub>i</sub>, mientras que y<sub>bi</sub> es el resultado de
+                    evaluar el polinomio B en el punto x<sub>i</sub>.
+                </p>
+
+                <div class="information__div--Imag" id="imgMultP">
+                </div>
+
+                <p class="information__text--p">
+                    Sorpendentemente los pares resultantes pertenecen a la gráfica del polinimio que es producto de A y
+                    B, a este lo trataremos como polinomio C y con estos pares ya tenemos información que lo
+                    caracteriza.
+                </p>
+
+                <p class="information__text--matExp">
+                    [<span class="matExp-spanf">(-2,1)</span>,<span class="matExp-spans">(-1,0)</span>,<span
+                        class="matExp-spant">(0,1)</span>]
+                </p>
+
+                <p class="information__text--matExp">
+
+                    <span class="multiPairs">[<span class="matExp-spanf">(-2,9)</span>,<span
+                            class="matExp-spans">(-1,4)</span>,<span class="matExp-spant">(0,1)</span>] </span>
+                </p>
+
+                <p class="information__text--matExp">
+                    [<span class="matExp-spanf">(-2,9)</span>,<span class="matExp-spans">(-1,0)</span>,<span
+                        class="matExp-spant">(0,1)</span>]
+                </p>
+
+                <p class="information__text--p">
+                    Sin embargo es necesario aclarar que se necesita una cantidad especifica de puntos para poder
+                    representar al polinomio C y esta cantidad es d+1, donde d es el grado del polinomio, esto se debe a
+                    cuestiones más familiares de la que se nos imaginamos. Un claro ejemplo es la recta, la recta es un
+                    polinomio de grado 1 y como sabemos son necesarios 2 puntos para obtener su ecuación y también
+                    debemos recordar que 2 puntos definen a una única recta. La idea anterior se toma para el resto de
+                    grados de un polinomio, de esta manera d+1 puntos definen de manera única a un polinomio de grado d.
+                </p>
+
+                <p class="information__text--p">
+                    Resumen:
+                    <br>
+                    Es posible representar a un polinomio con d+1 puntos o pares (x,y), este representación es conocida
+                    como "representación de valor" y se obtiene con ayuda de la "representación de coeficientes", que no
+                    es más que los coeficientes del polinomio y resulta necesaria para conocer "y". Si la presentación
+                    de valores para ambos polinomios A y B, se multiplica, la resultante corresponde al polinomio A*B.
+                    <br><br>
+                    Nota:
+                    <br>
+                    Así como se pasó de los coeficientes del polinomio a su representación de valor, es posible pasar la
+                    respresentación anterior a los coefientes del polinomio.
+                </p>
+
+                <div class="information__div--Imag" id="process">
+                </div>
+
+            </article>
+
+            <article class="information__text coefVal">
+                <h2>¿Qué valores?</h2>
+
+                <p class="information__text--p">
+                    Si somos observadores, notamos que en la representación de valores (x,y), "y" no es más que la
+                    evaluacion de un polinomio en el valor "x" y como se mencinó necesitamos d+1 representaciones de
+                    valor para caracterizar a un polinomio, ¿hay alguna forma de ahorrar la búsqueda de d+1 puntos para
+                    caracteriza un polinomio? Afortunadamente sí existe y reduce los puntos a buscar a la mitad.
+                    <br>
+                    Si pensamos en términos de funciones pares e impares es posible establecer lo siguiente:
+                    <br>
+                </p>
+
+                <p class="information__text--p">
+                    Para funciones pares:
+                </p>
+                <p class="information__text--matExp">
+                    <span class="funP">P(-x)=P(x)</span>
+                </p>
+
+                <p class="information__text--p">
+                    Para funciones impares:
+                </p>
+                <p class="information__text--matExp">
+                    <span class="funI">P(-x)=-P(x)</span>
+                </p>
+
+                <p class="information__text--p">
+                    A partir de este puntos n=d+1.
+                    <br>
+                    De esta forma no es necesario bucar n puntos, pues con n/2 puntos podemos deducir otros n/2 puntos.
+                </p>
+            </article>
+
+            <article class="information__text SimpEv">
+                <h2>Simplificar evaluación (Transformada rápida de Fourier)</h2>
+
+                <p class="information__text--p">
+                    Ahora nos preguntamos ¿hay alguna forma de hacer más sencilla la evaluación de polinomios? y la
+                    respuesta nuevamente es sí.
+                    <br><br>
+                    Por ejemplo, si queremos evaluar el siguiente polinomio en n puntos, donde solamente hay pares de
+                    puntos negativos y posistivos, es decir n/2 pares del estilo &#177;x es posible hacer una
+                    simplificación.
+                </p>
+
+                <p class="information__text--matExp">
+                    P(x) = <span class="termi">3x<sup>5</sup></span>+<span class="termp">2x<sup>4</sup></span>+<span
+                        class="termi">x<sup>3</sup></span>+<span class="termp">7x<sup>2</sup></span>+<span
+                        class="termi">5x</span>+<span class="termp">1</span>
+                </p>
+
+                <p class="information__text--p">
+                    Teniendo un polinomio se pueden agrupar los términos de exponentes pares, los términos de esponentes
+                    impares y también es posible factorizar una x.
+                </p>
+                <p class="information__text--p">
+                    Agrupamiento de pares e impares
+                </p>
+
+                <p class="information__text--matExp">
+                    P(x)=<span class="termp">(2x<sup>4</sup>+7x<sup>2</sup>+1)</span>+<span
+                        class="termi">(3x<sup>5</sup>+x<sup>3</sup>+5x)</span>
+                </p>
+
+                <p class="information__text--p">
+                    Factorizar x
+                </p>
+
+                <p class="information__text--matExp">
+                    <span class="termi">x(3x<sup>4</sup>+x<sup>2</sup>+5)</span>
+                </p>
+
+                <p class="information__text--p">
+                    En este punto podemos establecer que el polinomio original puede expresarse como la suma de 2
+                    polinomios.
+                </p>
+
+                <p class="information__text--matExp">
+                    P(x)=<span class="termp">P<sub>p</sub>(x)</span>+<span class="termi">xP<sub>i</sub>(x)</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    P<sub>p</sub>(x)=<span class="termp">2x<sup>4</sup>+7x<sup>2</sup>+1</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    P<sub>i</sub>(x)=<span class="termi">3x<sup>4</sup>+x<sup>2</sup>+5</span>
+                </p>
+
+                <p class="information__text--p">
+                    Ya que tenemos únicame términos de coeficientes, es posible realizar una ajuste en los polinomios
+                    para que en lugar de tener P<sub>p</sub>(x) se tenga P<sub>p</sub>(x<sup>2</sup>)
+                </p>
+
+                <p class="information__text--matExp">
+                    P(x)=<span class="termp">P<sub>p</sub>(x<sup>2</sup>)</span>+<span
+                        class="termi">xP<sub>i</sub>(x<sup>2</sup>)</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    P<sub>p</sub>(x<sup>2</sup>)=<span
+                        class="termp">2(x<sup>2</sup>)<sup>2</sup>+7x<sup>2</sup>+1</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    P<sub>i</sub>(x<sup>2</sup>)=<span class="termi">3(x<sup>2</sup>)<sup>2</sup>+x<sup>2</sup>+5</span>
+                </p>
+
+                <p class="information__text--p">
+                    De esta forma podemos notar que la evaluación la "x" positivas y negativas sólo difiere de un signo
+                    negativo.
+                </p>
+
+                <p class="information__text--matExp">
+                    P(x)=P<sub>p</sub>(x<sup>2</sup>)+xP<sub>i</sub>(x<sup>2</sup>)
+                    <br>
+                    P(-x)=P<sub>p</sub>(x<sup>2</sup>)-xP<sub>i</sub>(x<sup>2</sup>)
+                </p>
+
+                <p class="information__text--p">
+                    Lo anterior es un algoritmo recursivo, podemos dividir en pares e impares los polinomios que
+                    comoponen al original y evaluar esos polinomios en n/2 puntos en lugar de n puntos, de esta forma es
+                    prosible hacer el mismo proceso hasta el punto en el que ya no sea posible dividir más, este
+                    algoritmo tiene complejidad O(n long n).
+                    Es necesario mencionar que la recursión se rompe, ya que se pierde el tener pares &#177;.
+                    <br><br>
+                    Por ejemplo:
+                    <br><br>
+                    Si queremos evaluar un polinomio en [&#177;1,&#177;2]:
+                </p>
+
+                <p class="information__text--matExp">
+                    A(x) = <span class="termi">3x<sup>5</sup></span>+<span class="termp">2x<sup>4</sup></span>+<span
+                        class="termi">x<sup>3</sup></span>+<span class="termp">7x<sup>2</sup></span>+<span
+                        class="termi">5x</span>+<span class="termp">1</span>
+                </p>
+
+                <p class="information__text--p">
+                    Sabemos que lo debemos separar en 2 polinomios, una compuesto por los términos de potencias pares y
+                    otro por los de potencia impar.
+                </p>
+
+                <p class="information__text--matExp">
+                    A(x)=<span class="termp">P<sub>p</sub>(x<sup>2</sup>)</span>+<span
+                        class="termi">xP<sub>i</sub>(x<sup>2</sup>)</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    A(-x)=<span class="termp">P<sub>p</sub>(x<sup>2</sup>)</span>-<span
+                        class="termi">xP<sub>i</sub>(x<sup>2</sup>)</span>
+                </p>
+
+                <p class="information__text--p">
+                    Ahora debemos evaluar P<sub>p</sub>(x<sup>2</sup>) y P<sub>i</sub>(x<sup>2</sup>), en n/2 términos,
+                    estos n/2 terminos son [1,2], ya que si contamos con la evaluación de P<sub>p</sub>(2<sup>2</sup>) y
+                    P<sub>i</sub>(2<sup>2</sup>) es posible calcular A(2) y con estas mismas evaluaciones podemos
+                    obtener A(-2), ya que:
+                </p>
+
+                <p class="information__text--matExp">
+                    A(2)=<span class="termp">P<sub>p</sub>(2<sup>2</sup>)</span>+<span
+                        class="termi">xP<sub>i</sub>(2<sup>2</sup>)</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    A(2)=<span class="termp">P<sub>p</sub>(2<sup>2</sup>)</span>-<span
+                        class="termi">xP<sub>i</sub>(2<sup>2</sup>)</span>
+                </p>
+
+                <p class="information__text--p">
+                    Y lo mismo sucede con el 1, así que con tener las evaluaciones de P<sub>p</sub>(x<sup>2</sup>) y
+                    P<sub>i</sub>(x<sup>2</sup>) en 1 y 2 es sucifiente para obtener las evaluaciones de A(x) en &#177;1
+                    y &#177;2.
+                </p>
+
+                <p class="information__text--p">
+                    Ya que el algoritmo es recursivo y establecimos que se debe evaluar P<sub>p</sub>(x<sup>2</sup>) y
+                    P<sub>i</sub>(x<sup>2</sup>) en 1 y 2, con esto no es posible obtener los resultados deseados porque
+                    [1,2], no son pares &#177;, ambos números son distos y positivos, esto rompe la idea de la recusión.
+                </p>
+
+            </article>
+
+            <article class="information__text Comp">
+                <h2>Raíces de la unidad</h2>
+
+                <p class="information__text--p">
+                    Existe una forma de simpre contar con pares &#177; y es recurriendo a los números complejos, como se
+                    observa en la siguiente imagen a lo largo de las llamadas recursivas permiten mantener la propiedad
+                    de pares &#177;.
+                </p>
+
+                <div class="information__div--Imag" id="imgComplex">
+                </div>
+
+                <p class="information__text--p">
+                    Por suerte tenemos a las matemáticas de nuestro lado y estas nos ofrecen las raíces de la unidad,
+                    las cuales se encuentran dentro del campo de los complejo. La n-ésima raíz de la unidad se calcula
+                    de la siguiente forma w<sup>n</sup>=e<sup>2πin/n</sup>.
+                </p>
+
+                <p class="information__text--p">
+                    El uso de raices de la unidad funciona ya que son pares &#177;, de forma que
+                    w<sup>j</sup>=-w<sup>j+n/2</sup>, esto nos permite tener la evalución deseada.
+                    <br><br>
+                    Con lo anterior se puede evaluar un polinomio en
+                    [1,w<sup>1</sup>,w<sup>2</sup>,w<sup>3</sup>,...,w<sup>n-1</sup>], estas raíces de la unidad están
+                    representadas en el primer circulo de la imagen siguiente, en la recursión la idea es evaluar
+                    P<sub>p</sub>(x<sup>2</sup>) y P<sub>i</sub>(x<sup>2</sup>) en
+                    [1,w<sup>2</sup>,w<sup>4</sup>,w<sup>3</sup>,...,w<sup>2(n/2-1)</sup>], estas raíces son
+                    representadas en el segundo circulo, como podemos notar, en todo momento se tienen pares &#177;.
+                </p>
+
+                <div class="information__div--Imag" id="imgUR">
+                </div>
+
+                <p information__text--p>
+                    Y la evaluación con estas raíces se hace de la siguiente forma:
+                </p>
+
+                <p class="information__text--matExp">
+                    P(w<sup>j</sup>) = P<sub>p</sub>(w<sup>2j</sup>)+w<sub>j</sub>P<sub>p</sub>(w<sup>j</sup>)
+                </p>
+
+                <p class="information__text--matExp">
+                    P(w<sup>j+n/2</sup>) = P<sub>p</sub>(w<sup>2j</sup>)-w<sub>j</sub>P<sub>p</sub>(w<sup>j</sup>)
+                </p>
+
+                <p class="information__text--p">
+                    De esta forma se respeta la propiedad w<sup>j</sup>=-w<sup>j+n/2</sup> y siempre contamos con pares
+                    &#177;, asegurando un resutado correcto.
+                </p>
+            </article>
+            <article class="information__text Comp">
+                <h2>¿Qué sigue?</h2>
+                <p class="information__text--p">
+                    Ya que se tiene la evaluación de A(x) y B(x) en las raíces, se multiplica cada término de A(x) con
+                    su correspondiente en B(x), es decir, la evaluacion A(w<sup>i</sup>) por la evaluación de
+                    B(w<sup>i</sup>), posteriormente se aplica el procedimiento inverso al anterior para obtener los
+                    coefientes del polinomio.
+                </p>
+            </article>
+            <article class="information__text Comp">
+                <h2>Notas de implementación</h2>
+
+                <p class="information__text--p">
+                    La representación del polinomio con la que se trabaja a lo largo del algoritmo es la representación
+                    de coefientes, se encuentra almacenada en una arreglo, este es la que se está dividiendo
+                    constantemente en índices pares e impares que corresponden con la potencia que tiene el término del
+                    cual son coeficientes.
+                    <br><br>
+                    Antes de comenzar el proceso de evalución los arreglos que tiene los coefientes del polinomios deben
+                    de ser del tamaño de una potencia de 2, para que la división en el algoritmo calcule los resultados
+                    esperados, hay implementaciones que trabajan bien aún cuando el arreglo no es del tamaño de una
+                    potencia de 2, sin embargo, se realizó de esta manera para simplificar, esta potencia de 2 debe ser
+                    igual o inmeditamente mayor a la suma de los grados de los polinomios a multiplicar, con el fin de
+                    tener el espacio suficiente para almacenar la respuestas, pues si se requiere multipliicar un
+                    polinomio de grado 2 por uno de grado 3, el resultante será uno de grado 5 y siguiendo lo anterior,
+                    los arreglos de coeficientes deben ser de tamaño 8.
+                    <br><br>
+                    Para el proceso de obtener los coefientes a partir de los valores resultantes de la multiplicación
+                    de la evaluación de los polinomios, se realiza el proceso inverso, en el cual las raíces complejas
+                    son inversas w<sup>-n</sup>=e<sup>-2πin/n</sup> y en lugar de trabajar con la representación de
+                    coefientes de los polinomios, se trabaja con los valores resultantes de la multiplicación de la
+                    evaluación de los polinomios.
+                </p>
+            </article>
+            <article class="information__text Comp">
+                <h2>Código en JavaScript</h2>
+
+                <div class="content__code">
+                    <pre class="code"><code>
+//p es la representación de coefientes
+function fft(p) {
+    //Tamaño del polinomio
+    let n = p.length
+
+    //Si el tamaño es 1, se retorna el mismo polinomio
+    if (n == 1)
+        return p
+
+    //Se guardan n raíces de la unidad
+    let w = Array(n)
+    for (let i = 0; i < n; i++) {
+
+        //Angulo
+        let alpha = 2 * Math.PI * i / n
+
+        //Raiz de la unidad
+        w[i] = math.complex(Math.cos(alpha), Math.sin(alpha))
+    }
+
+    let pp = Array(n / 2)
+    let pi = Array(n / 2)
+
+    for (let i = 0; i < n / 2; i++) {
+
+        //Coeficientes en indice par
+        pp[i] = p[i * 2]
+
+        //Coeficientes en indice impar
+        pi[i] = p[i * 2 + 1]
+    }
+
+    //Recursión
+    let yp = fft(pp)
+    let yi = fft(pi)
+
+    let y = Array(n)
+
+    for (let i = 0; i < n / 2; i++) {
+        y[i] = math.add(yp[i], math.multiply(w[i], yi[i]))
+        y[i + n / 2] = math.add(yp[i], math.multiply(math.complex(-1, 0), math.multiply(w[i], yi[i])))
+    }
+
+    return y;
+}
+                </code></pre>
+                </div>
+
+            </article>
+                
+                
+            <article class="information__text Comp">
+                <h2>Código en C++</h2>
+
+                <div class="content__code">
+                    <pre class="code"><code>
+#include <bits/stdc++.h>
+using namespace std;
+ 
+typedef complex<double> cd;
+ 
+// Funcion recursiva de FFT
+vector<cd> fft(vector<cd>& a){
+    //Tamaño del polinomio
+    int n = a.size();
+ 
+    //Si el tamaño es 1, se retorna el mismo polinomio
+    if (n == 1)
+        return vector<cd>(1, a[0]);
+ 
+    // Se almacenan n raices n-esimas de la unidad
+    vector<cd> w(n);
+    for (int i = 0; i < n; i++) {
+        double alpha = 2 * M_PI * i / n;
+        w[i] = cd(cos(alpha), sin(alpha));
+    }
+ 
+    vector<cd> pp(n / 2), pi(n / 2);
+    for (int i = 0; i < n / 2; i++) {
+ 
+        //Coeficientes en indice par
+        pp[i] = a[i * 2];
+ 
+        //Coeficientes en indice impar
+        pi[i] = a[i * 2 + 1];
+    }
+ 
+    // Llamada recursiva para coeficientes pares 
+    vector<cd> yp = fft(pp);
+ 
+    // Llamada recursiva para coeficientes impares 
+    vector<cd> yi = fft(pi);
+ 
+    // Se almacenan los valores y0, y1, y2, ..., yn-1.
+    vector<cd> y(n);
+    for (int j = 0; j < n / 2; j++) {
+        y[j] = yp[j] + w[j] * yi[j];
+        y[j + n / 2] = yp[j] - w[j] * yi[j];
+    }
+
+    return y;
+}
+                </code></pre>
+                </div>
+
+            </article>
+
+            <article class="information__text Comp">
+                <h2>Código en Python3</h2>
+
+                <div class="content__code">
+                    <pre class="code"><code>
+from math import sin,cos,pi
+ 
+# Recursive function of FFT
+def fft(a):
+ 
+    n = len(a)
+ 
+    #Si el tamaño es 1, se retorna el mismo polinomio
+    if n == 1:
+        return [a[0]]
+ 
+    #Se almacenan n raices n-esimas de la unidad
+    theta = 2*pi/n
+    w = list( complex(cos(theta*i), sin(theta*i)) for i in range(n) )
+     
+    #Separacion de coeficientes
+    Aeven = a[0::2]
+    Aodd  = a[1::2]
+ 
+    #Llamada recursiva para coeficientes pares 
+    Yeven = fft(Aeven)
+ 
+    #Llamada recursiva para coeficientes impares 
+    Yodd = fft(Aodd)
+ 
+    #Se almacenan los valores y0, y1, y2, ..., yn-1.
+    Y = [0]*n
+    
+    middle = n//2
+    for k in range(n//2):
+        w_yodd_k  = w[k] * Yodd[k]
+        yeven_k   =  Yeven[k]
+         
+        Y[k]          =  yeven_k  +  w_yodd_k
+        Y[k + middle] =  yeven_k  -  w_yodd_k
+     
+    return Y
+                </code></pre>
+                </div>
+
+            </article>
+                
+            <article class="information__text Comp">
+                <h2>Fuentes por consultar</h2>
+
+                <p class="information__text--p">
+                    Si estás interesado en el algoritmo puede entrar a los siguientes links:
+                </p>
+
+                <a href="https://www.youtube.com/watch?v=h7apO7q16V0&t=1033s" target="_blank">Vídeo con animaciones de la
+                    multiplicación de polinomios usando la transformada rápida de Fourier</a>
+                <br>
+                <a href="http://codeforces.com/blog/entry/43499" target="_blank">Multiplicación de
+                    polinomios usando la transformada rápida de Fourier</a>
+
+            </article>
+        </section>
+
+    </main>
+    <footer class="main-footer">
+        <span>Copyright &copy; Equipo Burbuja 2021</span>
+        <br><br>Ramirez Hidalgo Marco Antonio
+            <br>Pimentel Paulin Daniel Jezrael
+            <br>Saldaña Arcos Hilda Guadalupe
+            <br>Sánchez Fuentes Consuelo
+    </footer>
+    <script src="js/shared.js"></script>
+</body>
+
+</html>

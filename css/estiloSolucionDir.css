@@ -1,0 +1,65 @@
+/*
+Paleta de colores :P
+Stratos: #001B48: 
+Regal blue: #02457A 
+Bondi blue: #018ABE  
+Morning glory: #97CAD8 
+Botticelli: #D6E8EE
+*/
+
+.matExp__mult1{
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: primTerm;
+}
+
+@keyframes primTerm {
+  from {
+  	color:  #018ABE;
+  }
+
+  to {
+  	color: #001B48;
+  	text-decoration: underline;
+  }
+}
+
+.matExp__mult2{
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: segTerms;
+}
+
+@keyframes segTerms {
+  from {
+  	color: #001B48;
+  }
+
+  to {
+  	color: #018ABE;
+  }
+}
+
+.array{
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: arrColor;
+}
+
+@keyframes arrColor {
+  from {
+  	color: #001B48;
+  }
+
+  to {
+  	color: #018ABE;
+  }
+}
+
+

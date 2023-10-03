@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de polinomios</title>
+    <link rel="shortcut icon" href="img/burbuja.png">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" type="text/css" href="css/stylePoli.css" media="screen" />
+</head>
+
+<script src="js/animacionDirecta.js"></script>
+
+<body>
+    <div class="backdrop"></div>
+    <div class="modal">
+        <h1 class="modal__title">Mensaje</h1>
+        <div class="modal__actions">
+            <a href="start-hosting/index.html" class="modal__action">Aceptar</a>
+            <button class="modal__action modal__action--negative" type="button">Declinar</button>
+        </div>
+    </div>
+
+    <div class="telefono-mensaje">
+        <div class="mensaje">
+            <h3>Para una mejor experencia de usuario, por favor coloca tu teléfono horizontalmente</h3>
+        </div>
+        <div class="imagen">
+            <img src="img/burbuja-mensaje.png" alt="">
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div>
+            <button class="toggle-button">
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+            </button>
+            <a href="index.html" class="main-header__brand">
+                <img src="img/burbuja.png" alt="">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="index.html">Descripción</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="animacionDirecta.html">Animación</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="index.html">Problema</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDirecta.html">Solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDyC.html">Solución DyC</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDirecta.html">Animación solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDyC.html">Animación DyC</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="options">
+            <ul class="options__items">
+                <li class="options__item options__item--active">
+                    <a href="animacionDirecta.html">Animación de solución directa</a>
+                </li>
+                <li class="options__item">
+                    <a href="animacionDyC.html">Animación de solución DyV</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="animacion">
+
+            <div id="animacionControl" class="animacion-control">
+                <div class="animacion-titulo">
+                    <h3 class="animacion-h3">Selecciona tus polinomios</h3>
+                </div>
+
+                <div class="table-container polinomios">
+
+                    <table class="table-pol">
+                        <tr id="name-pol">
+                            <th>GRADO</th>
+                            <th id="th-np0">x<sup>0</sup></th>
+                            <th id="th-np1">x<sup>1</sup></th>
+                            <th id="th-np2">x<sup>2</sup></th>
+                            <th id="th-np3">x<sup>3</sup></th>
+                            <th id="th-np4">x<sup>4</sup></th>
+                        </tr>
+                        <tr id="first-pol">
+                            <th id="name-pol">A(x)</th>
+                            <th id="th-fp0"><input id="ip-fp0" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-fp1"><input id="ip-fp1" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-fp2"><input id="ip-fp2" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-fp3"><input id="ip-fp3" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-fp4"><input id="ip-fp4" class="input-pol" type="number" placeholder="0"></th>
+                        </tr>
+                        <tr id="second-pol">
+                            <th id="name-pol">B(x)</th>
+                            <th id="th-sp0"><input id="ip-sp0" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-sp1"><input id="ip-sp1" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-sp2"><input id="ip-sp2" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-sp3"><input id="ip-sp3" class="input-pol" type="number" placeholder="0"></th>
+                            <th id="th-sp4"><input id="ip-sp4" class="input-pol" type="number" placeholder="0"></th>
+                        </tr>
+                    </table>
+
+                </div>
+                <br><br>
+                <div class="animacion-control--botones">
+                    <button onclick="agrega()" id="button0" class="button--enabled">Agregar</button>
+                    <button onclick="eliminar()" id="button1" class="button--enabled">Eliminar</button>
+                    <button onclick="getPoli()" id="button2" class="button--enabled">Ver</button>
+                    <button onclick="nuevaAnim()" class="button--enabled">Nuevo</button>
+                </div>
+            </div>
+
+            <div class="animation-container">
+
+                <br><br>
+                <table class="animation-pol" id="anima-pol1">
+                </table>
+                <br>
+                <table class="animation-pol" id="anima-pol2">
+                </table><br>
+                <p style="font-family: 'Quicksand'; font-size: 15px; font-weight: bold;" id="info"></p>
+
+                <table class="animation-pol" id="anima-polres">
+                </table>
+
+                <div class="animation-result">
+                    <p id="result" style="font-family: 'Quicksand'; font-size: 15px; font-weight: bold;" id="info"></p>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <footer class="main-footer">
+        <span>Copyright &copy; Equipo Burbuja 2021</span>
+        <br><br>Ramirez Hidalgo Marco Antonio
+            <br>Pimentel Paulin Daniel Jezrael
+            <br>Saldaña Arcos Hilda Guadalupe
+            <br>Sánchez Fuentes Consuelo
+    </footer>
+    <script src="js/shared.js"></script>
+</body>
+
+</html>

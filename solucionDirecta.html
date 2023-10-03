@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de polinomios</title>
+    <link rel="shortcut icon" href="img/burbuja.png">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/estiloSolucionDir.css">
+    <link rel="stylesheet" href="css/infoShared.css">
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <div class="modal">
+        <h1 class="modal__title">Mensaje</h1>
+        <div class="modal__actions">
+            <a href="start-hosting/index.html" class="modal__action">Aceptar</a>
+            <button class="modal__action modal__action--negative" type="button">Declinar</button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div>
+            <button class="toggle-button">
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+            </button>
+            <a href="index.html" class="main-header__brand">
+                <img src="img/burbuja.png" alt="">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="index.html">Descripción</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="animacionDirecta.html">Animación</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="index.html">Problema</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDirecta.html">Solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="solucionDyC.html">Solución DyC</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDirecta.html">Animación solución directa</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="animacionDyC.html">Animación DyC</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="options">
+            <ul class="options__items">
+                <li class="options__item">
+                    <a href="index.html">Problema</a>
+                </li>
+                <li class="options__item options__item--active">
+                    <a href="solucionDirecta.html">Solución directa</a>
+                </li>
+                <li class="options__item">
+                    <a href="solucionDyC.html">Solución Divide y Vencerás</a>
+                </li>
+            </ul>
+        </section>
+
+        <article class="information">
+            <h1 class="information__h1">Solución directa</h1>
+
+            <div class="information__text">
+                <p class="information__text--p">
+                    La solución directa de este problema consiste en tomar todos los términos de primer polinomio y
+                    multiplicarlos por los del segundo polinomio.
+                </p>
+
+                <p class="information__text--matExp">
+                    2x+1 (1+x-x<sup>2</sup>)
+                </p>
+
+                <p class="information__text--p">
+                    De esta menera el primer paso será tomar el primer termino del primer polinomio y multiplicarlo por
+                    los términos del segundo polinomio.
+                </p>
+
+                <p class="information__text--matExp">
+                    <span class="matExp__mult1">2x</span>+<span>2x</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    <span class="matExp__mult2">1</span>+<span class="matExp__mult2">x</span>-<span
+                        class="matExp__mult2">x<sup>2</sup></span>
+                </p>
+
+                <p class="information__text--p">
+                    Siguiendo con esa idea, después se toma el segundo término del primer polinomio y se multiplica por
+                    cada término del segundo polinomio.
+                </p>
+
+                <p class="information__text--matExp">
+                    <span>2x</span>+<span class="matExp__mult1">2x</span>
+                </p>
+
+                <p class="information__text--matExp">
+                    <span class="matExp__mult2">1</span>+<span class="matExp__mult2">x</span>-<span
+                        class="matExp__mult2">x<sup>2</sup></span>
+                </p>
+
+                <p class="information__text--p">
+                    Después de esto se suman los términos semejantes.
+                    <br><br>
+                    Esta idea no se encuentra alejada de lo que se hace al programar la solución, en el código se crean
+                    2 arreglos, una para los coeficientes del polinomio A y otro para los de B.
+                </p>
+
+                <p class="information__text--matExp">
+                    <span class="array">A[]</span> y <span class="array">B[]</span>
+                </p>
+
+                <p class="information__text--p">
+                    Posteriormente se recorren los arreglos, con ciclos for anidados, dentro de estos ciclos se realiza
+                    la multiplicación de los coeficientes correspondientes.
+                </p>
+
+                <div class="content__code">
+                    <pre class="code"><code>
+for(i=0,i menor que n, incrementa i){
+    for(j=0,j menor que m, incrementa j){
+            C[i+j]=A[i]*B[j]
+    }
+}
+            </code></pre>
+                </div>
+
+                <p class="information__text--p">
+                    El resultado se suma a la posición debida del arreglo de respuestas, es importante mencionar que en
+                    este código se realizan sumas las sumas anteriores pues ya se tienen considerados los términos
+                    semejantes que normalmente sumamos después de multiplicar los términos de los polinomios.
+                </p>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="main-footer">
+        <span>Copyright &copy; Equipo Burbuja 2021</span>
+        <br><br>Ramirez Hidalgo Marco Antonio
+            <br>Pimentel Paulin Daniel Jezrael
+            <br>Saldaña Arcos Hilda Guadalupe
+            <br>Sánchez Fuentes Consuelo
+    </footer>
+    <script src="js/shared.js"></script>
+</body>
+
+</html>
